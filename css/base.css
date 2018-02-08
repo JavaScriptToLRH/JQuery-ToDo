@@ -1,0 +1,170 @@
+* {
+    /* box-sizing 属性允许您以特定的方式定义匹配某个区域的特定元素。
+    例如，假如您需要并排放置两个带边框的框，可通过将 box-sizing 设置为 "border-box"。这可令浏览器呈现出带有指定宽度和高度的框，并把边框和内边距放入框中。
+    content-box	宽度和高度分别应用到元素的内容框。在宽度和高度之外绘制元素的内边距和边框。
+    border-box	为元素设定的宽度和高度决定了元素的边框盒。就是说，为元素指定的任何内边距和边框都将在已设定的宽度和高度内进行绘制。
+                通过从已设定的宽度和高度分别减去边框和内边距才能得到内容的宽度和高度。 */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: background 0.2s;
+    -moz-transform: background 0.2s;
+    -ms-transform: background 0.2s;
+    -o-transform: background 0.2s;
+    transform: background 0.2s;
+    outline: 0;
+}
+body {
+    background: #00334b;
+    color: #ffffff;
+}
+.fr{
+    float: right;
+}
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 10px;
+}
+h1 {
+    text-align: center;
+}
+.task-list {
+    margin: 10px 0;
+}
+input, .task-item, textarea, button, .task-detail{
+    border-radius: 3px;
+    padding: 10px;
+}
+textarea, input[type=text], input[type=date] {
+    border: none;
+    display: block;
+    width: 100%;
+    bottom: 0;
+    background: #ddd;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+textarea {
+    height: 100px;
+}
+/* :focus 选择器用于选取获得焦点的元素。
+提示：接收键盘事件或其他用户输入的元素都允许 :focus 选择器。 */
+input[type=text]:hover, input[type=date]:hover, textarea:hover
+input[type=text]:focus, input[type=date]:focus, textarea:focus {
+    background: #fff;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+button {
+    display: inline-block;
+    border: 0;
+    cursor: pointer;
+    color: #333;
+}
+.add-task input[type=text]{
+    float: left;
+    width: 84%;
+    margin-right: 1%;
+}
+button.primary,
+[type=submit]{
+    background: #46b1e4;
+}
+.add-task button[type=submit]{
+    width: 15%;
+}
+.add-task button[type=submit], .task-item{
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.4);
+}
+.add-task button[type=submit]:hover {
+    background: #5fb9e4;
+}
+.task-item {
+    padding: 10px;
+    background: #ffffff;
+    color: #333;
+    margin-bottom: 2px;
+    border-radius: 3px;
+}
+.task-item:hover {
+    background: #dddddd;
+}
+.task-item.completed{
+    color: #aaa;
+    /* background: rgba(255, 255, 255, 0.8); */
+    opacity: 0.4;
+}
+.task-item.completed:after{
+    content: "";
+    height: 1px;
+    background: #aaa;
+    width: 97%;
+    position: relative;
+    top: -8px;
+    display: block;
+    float: right;
+}
+.task_detail_mask{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(30, 30, 30, 0.6);
+}
+.task-detail {
+    display: none;
+    padding: 10px;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    overflow: auto;
+    -webkit-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+}
+.task-detail .input-item {
+    margin-bottom: 10px;
+    color: #000;
+}
+.task-detail .content {
+    color: #000000;
+    padding: 10px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.task-content {
+    margin-left: 10px;
+}
+.action {
+    color: #aaa;
+    font-size: 90%;
+    cursor: pointer;
+}
+.action:hover {
+    color: #000;
+}
+.msg{
+    display: none;
+    text-align: center;
+    background: #ffe264;
+    padding: 10px;
+    color: #333;
+}
+.anchor {
+    cursor: pointer;
+}
+.alerter {
+    width: 0;
+    height: 0;
+}
