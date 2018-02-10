@@ -150,10 +150,17 @@
         $box.appendTo($body);
         $window.resize();//打开窗口时，浏览器窗口大小没有调整，所以删除模块不会居中，直接调用，用于第一次删除模块居中
         //deferred.promise()方法。
-        //它的作用是，在原来的deferred对象上返回另一个deferred对象，
-        //后者只开放与改变执行状态无关的方法（比如done()方法和fail()方法），
-        //屏蔽与改变执行状态有关的方法（比如resolve()方法和reject()方法），从而使得执行状态不能被改变。
+        //          它的作用是，在原来的deferred对象上返回另一个deferred对象，
+        //          后者只开放与改变执行状态无关的方法（比如done()方法和fail()方法），
+        //          屏蔽与改变执行状态有关的方法（比如resolve()方法和reject()方法），从而使得执行状态不能被改变。
         // deferred.promise() 没有参数时，返回一个新的deferred对象，该对象的运行状态无法被改变；接受参数时，作用为在参数对象上部署deferred接口。
+        // deferred.promise() 函数返回 Deferred(延迟)的 Promise 对象,
+        //                    方法允许一个异步函数阻止那些干涉其内部请求的进度（progress）或状态（status）的其它代码
+        //Promise （承诺）对象仅会暴露那些需要绑定额外的处理或判断状态的延迟方法(then, done, fail, always, pipe, progress, state，和 promise)时，
+        //                      并不会暴露任何用于改变状态的延迟方法(resolve, reject, notify, resolveWith, rejectWith, 和 notifyWith).
+        //如果您要创建一个Deferred(延迟)，并且保持这个Deferred(延迟)的引用，以便它可以在一些点来解决或拒绝。
+        //通过deferred.promise()定义Promise（承诺）对象即可。这样的话，其它的代码就可以注册回调函数或检查当前状态。
+        //   // 返回 Promise 对象，调用者不能改变延迟对象
         return dfd.promise();
     }
     
